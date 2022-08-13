@@ -13,6 +13,10 @@ set -e
 #remove conflicting dnsmasq
 if pacman -Qi dnsmasq &> /dev/null; then
 		sudo pacman -R dnsmasq --noconfirm 
+else
+		echo "################################################################"
+		echo "################### Proceeding since dnsmasq is already removed."
+		echo "################################################################"
 fi
 
 package="pi-hole-server"
